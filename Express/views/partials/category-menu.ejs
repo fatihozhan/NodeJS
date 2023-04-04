@@ -1,0 +1,13 @@
+<div class="list-group">
+  <!--             <% for( let i = 0; i < categories.length; i++ ) { %>
+      <a href="" class="list-group-item list-group-item-action"
+      > <%= categories[i] %> </a
+    >
+    <% } %> -->
+
+  <% categories.forEach((category) => { %>
+  <a href="" class="list-group-item list-group-item-action">
+    <%= category %>
+  </a>
+  <%} ) %>
+</div>
