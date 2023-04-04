@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anasayfa</title>
-    <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
-  </head>
+  <%- include('../partials/head') %>
   <body>
     <%- include('../partials/nav') %>
 
@@ -18,9 +12,9 @@
         <div class="col-md-9">
           <h1 class="h3 mb-3"><%=title%></h1>
 
-          <% blogs.forEach(blog => { %> <% if (blog.onay) { %>
-           <%-include('../partials/blog-card', blog) %>
-            <% } %> <% }) %> <% if
+          <% if (blogs.length == 0) { %> <%- include('../partials/no-product')
+          %> <% } %> <% blogs.forEach(blog => { %> <% if (blog.onay) { %>
+          <%-include('../partials/blog-card', blog) %> <% } %> <% }) %> <% if
           (blogs.filter(blog => blog.onay).length > 3) { %> <%-
           include('../partials/pagination') %> <% } %>
         </div>
