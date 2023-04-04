@@ -37,117 +37,29 @@
         </div>
         <div class="col-md-9">
           <h1 class="h3 mb-3"><%=title%></h1>
+
+          <% blogs.forEach(blog => { %> <% if (blog.anasayfa) { %>
+
           <div class="card mb-3">
             <div class="row">
               <div class="col-md-3">
-                <img src="/static/images/1.jpeg" alt="" class="img-fluid" />
+                <img
+                  src="/static/images/<%= blog.blog_img %>"
+                  alt=""
+                  class="img-fluid"
+                />
               </div>
               <div class="col-md-9">
                 <div class="card-body">
                   <div class="cart-title">
-                    <h5>Komple Uygulamalı Web Geliştirme</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Voluptas repudiandae excepturi est iusto labore dolorem
-                      rerum, neque nobis veniam eveniet. Saepe, perferendis
-                      sapiente adipisci ipsa at nostrum minus architecto
-                      quaerat. Aliquam alias quis quisquam iure maxime magni
-                      eligendi aspernatur tempore modi fugit? A amet perferendis
-                      explicabo, ex cupiditate odio dolores aperiam? Mollitia
-                      molestiae, consequatur corporis placeat doloribus
-                      excepturi similique minima? Dolores corporis delectus sed
-                      suscipit ipsa accusamus molestiae! Et minus, dolorum quo
-                      corrupti rem placeat nemo vel suscipit explicabo, sint
-                      eius deserunt magnam. Dolores, saepe iste? Dolorem atque
-                      eaque modi! Ipsum, tenetur obcaecati voluptate expedita
-                      numquam facilis impedit recusandae nulla sunt minus fugiat
-                      ducimus! Repellendus consectetur eius beatae! Eius
-                      inventore enim ea excepturi illo autem! Iusto at quidem
-                      esse aliquid? Fugit, quam? Blanditiis quidem quas
-                      repudiandae, architecto laborum veritatis incidunt,
-                      perferendis obcaecati vero facilis et suscipit aliquid
-                      iste nemo nulla dolorem cupiditate qui iure quis pariatur.
-                      Tenetur saepe enim maxime.
-                    </p>
+                    <h5><%= blog.blog_title %></h5>
+                    <p class="card-text"><%= blog.blog_desc %></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mb-3">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="/static/images/1.jpeg" alt="" class="img-fluid" />
-              </div>
-              <div class="col-md-9">
-                <div class="card-body">
-                  <div class="cart-title">
-                    <h5>Python ile Web Geliştirme</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Voluptas repudiandae excepturi est iusto labore dolorem
-                      rerum, neque nobis veniam eveniet. Saepe, perferendis
-                      sapiente adipisci ipsa at nostrum minus architecto
-                      quaerat. Aliquam alias quis quisquam iure maxime magni
-                      eligendi aspernatur tempore modi fugit? A amet perferendis
-                      explicabo, ex cupiditate odio dolores aperiam? Mollitia
-                      molestiae, consequatur corporis placeat doloribus
-                      excepturi similique minima? Dolores corporis delectus sed
-                      suscipit ipsa accusamus molestiae! Et minus, dolorum quo
-                      corrupti rem placeat nemo vel suscipit explicabo, sint
-                      eius deserunt magnam. Dolores, saepe iste? Dolorem atque
-                      eaque modi! Ipsum, tenetur obcaecati voluptate expedita
-                      numquam facilis impedit recusandae nulla sunt minus fugiat
-                      ducimus! Repellendus consectetur eius beatae! Eius
-                      inventore enim ea excepturi illo autem! Iusto at quidem
-                      esse aliquid? Fugit, quam? Blanditiis quidem quas
-                      repudiandae, architecto laborum veritatis incidunt,
-                      perferendis obcaecati vero facilis et suscipit aliquid
-                      iste nemo nulla dolorem cupiditate qui iure quis pariatur.
-                      Tenetur saepe enim maxime.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="/static/images/1.jpeg" alt="" class="img-fluid" />
-              </div>
-              <div class="col-md-9">
-                <div class="card-body">
-                  <div class="cart-title">
-                    <h5>Bir şeyler ile web geliştirme</h5>
-                    <p class="card-text">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Voluptas repudiandae excepturi est iusto labore dolorem
-                      rerum, neque nobis veniam eveniet. Saepe, perferendis
-                      sapiente adipisci ipsa at nostrum minus architecto
-                      quaerat. Aliquam alias quis quisquam iure maxime magni
-                      eligendi aspernatur tempore modi fugit? A amet perferendis
-                      explicabo, ex cupiditate odio dolores aperiam? Mollitia
-                      molestiae, consequatur corporis placeat doloribus
-                      excepturi similique minima? Dolores corporis delectus sed
-                      suscipit ipsa accusamus molestiae! Et minus, dolorum quo
-                      corrupti rem placeat nemo vel suscipit explicabo, sint
-                      eius deserunt magnam. Dolores, saepe iste? Dolorem atque
-                      eaque modi! Ipsum, tenetur obcaecati voluptate expedita
-                      numquam facilis impedit recusandae nulla sunt minus fugiat
-                      ducimus! Repellendus consectetur eius beatae! Eius
-                      inventore enim ea excepturi illo autem! Iusto at quidem
-                      esse aliquid? Fugit, quam? Blanditiis quidem quas
-                      repudiandae, architecto laborum veritatis incidunt,
-                      perferendis obcaecati vero facilis et suscipit aliquid
-                      iste nemo nulla dolorem cupiditate qui iure quis pariatur.
-                      Tenetur saepe enim maxime.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <% } %> <% }) %>
         </div>
       </div>
     </div>
