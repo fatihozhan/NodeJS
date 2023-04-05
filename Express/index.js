@@ -8,6 +8,8 @@ app.set("view engine", "ejs");
 app.get("view engine");
 app.use("/libs", express.static(path.join(__dirname, "node_modules")));
 app.use("/static", express.static(path.join(__dirname, "public")));
+//form datalarının sağlıklı bir şekilde gelebilmesi için 
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/admin/", adminRouter);
 app.use(userRoutes);

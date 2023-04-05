@@ -9,48 +9,40 @@
         <div class="col-md-12 mt-3">
             <% if (action != "undefined" && action =="edit") { %>
              <div class="alert alert-success">
-                Blog Güncellendi
+                Kategori Güncellendi
              </div>
             <% } %>
             <% if (action != "undefined" && action =="create") { %>
              <div class="alert alert-success">
-                Blog Eklendi
+                Kategori Eklendi
              </div>
             <% } %>
             <% if (action != "undefined" && action =="delete") { %>
              <div class="alert alert-success">
-                Blog Silindi
+                Kategori Silindi
              </div>
             <% } %>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th style="width : 50px">ID</th>
-                <th style="width : 150px">Resim</th>
-                <th>Baslik</th>
+                <th>İsim</th>
                 <th style="width : 130px"></th>
               </tr>
             </thead>
             <tbody>
-              <% blogs.forEach(blog => { %>
+              <% categories.forEach(category => { %>
               <tr>
-                <td># <%= blog.blogid %></td>
-                <td>
-                  <img
-                    src="/static/images/<%= blog.resim %>"
-                    alt=" "
-                    class="img-fluid"
-                  />
-                </td>
-                <td><%= blog.baslik %></td>
+                <td># <%= category.categoryid %></td>
+                <td><%= category.name %></td>
                 <td>
                   <a
-                    href="/admin/blogs/<%= blog.blogid %>"
+                    href="/admin/category/<%= category.categoryid %>"
                     class="btn btn-sm btn-primary"
                     >edit</a
                   >
                   <a
-                    href="/admin/blogs/delete/<%= blog.blogid %>"
+                    href="/admin/category/delete/<%= category.categoryid %>"
                     class="btn btn-sm btn-danger"
                     >delete</a
                   >

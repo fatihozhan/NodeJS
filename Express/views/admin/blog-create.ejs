@@ -1,12 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - List</title>
-</head>
-<body>
-    Admin Create
-</body>
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/nav') %>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-12 mt-3">
+          <form method="post" enctype="multipart/form-data">
+            <div class="row mb-3">
+              <label for="baslik" class="col-sm-2 col-form-label">Baslik</label>
+              <div class="col-sm-8">
+                <input
+                  name="baslik"
+                  type="text"
+                  class="form-control"
+                  id="baslik"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="baslik" class="col-sm-2 col-form-label"
+                >Açıklama</label
+              >
+              <div class="col-sm-8">
+                <textarea
+                  type="text"
+                  name="aciklama"
+                  rows="10"
+                  class="form-control"
+                  id="editor"
+                ></textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="altbaslik" class="col-sm-2 col-form-label"
+                >Altbaslik</label
+              >
+              <div class="col-sm-8">
+                <textarea
+                  type="text"
+                  name="aciklama"
+                  rows="5"
+                  class="form-control"
+                ></textarea>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="resim" class="col-sm-2 col-form-label">Resim</label>
+              <div class="col-sm-8">
+                <input
+                  type="file"
+                  name="resim"
+                  id="resim"
+                  class="form-control"
+                />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="kategori" class="col-sm-2 col-form-label"
+                >Kategori</label
+              >
+              <div class="col-sm-8">
+                <select name="kategori" id="kategori" class="form-select">
+                  <option value="-1" selected>Seçiniz</option>
+                  <% categories.forEach(category => { %>
+                   <option value="<%= category.categoryid %>"><%= category.name %></option>
+                  <% }) %>
+                </select>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-8 offset-sm-2">
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="anasayfa"
+                    class="form-check-input"
+                    id="anasayfa"
+                  />
+                  <label for="anasayfa" class="form-check-label">
+                    Anasayfa
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-8 offset-sm-2">
+                <div class="form-check">
+                  <input type="checkbox" name="onay" class="form-check-input" id="onay" />
+                  <label for="onay" class="form-check-label"> Onay </label>
+                </div>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-sm-8 offset-sm-2">
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.ckeditor.com/ckeditor5/37.0.0/classic/ckeditor.js"></script>
+    <script>
+      ClassicEditor.create(document.querySelector("#editor"))
+        .then((editor) => {
+          console.log(editor);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    </script>
+  </body>
 </html>
