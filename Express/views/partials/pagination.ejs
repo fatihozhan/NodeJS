@@ -1,9 +1,14 @@
-<nav>
-    <ul class="pagination justify-content-center">
-      <a href="" class="page-link active">Geri</a>
-      <a href="" class="page-link">1</a>
-      <a href="" class="page-link">2</a>
-      <a href="" class="page-link">3</a>
-      <a href="" class="page-link">İleri</a>
-    </ul>
-  </nav>
+<% if (total > 1) { %>
+
+<nav class="mt-5">
+  <ul class="pagination justify-content-center">
+    <a href="?page=0" class="page-link active">İlk Sayfa</a>
+    <% for( let i = 0; i < pages; i++ ) { %>
+
+    <a href="?page=<%= i+1 %>" class="page-link <%= (i + 1==current) ? "active" : "" %> "><%= i+1 %></a>
+    <% } %>
+
+    <a href="?page=<%= pages %>" class="page-link">Son Sayfa</a>
+  </ul>
+</nav>
+<% } %>

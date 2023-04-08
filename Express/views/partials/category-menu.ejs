@@ -9,8 +9,8 @@
   >
   <% categories.forEach((category) => { %>
   <a
-    href="/blogs/category/<%= category.categoryid %>"
-    class="list-group-item list-group-item-action <%= selectedCategory == category.categoryid ? 'active' : '' %>"
+    href="/blogs/category/<%= category.url %>"
+    class="list-group-item list-group-item-action <%= selectedCategory == category.url ? 'active' : '' %>"
   >
     <%= category.name %>
   </a>

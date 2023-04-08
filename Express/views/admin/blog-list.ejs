@@ -34,7 +34,7 @@
             <tbody>
               <% blogs.forEach(blog => { %>
               <tr>
-                <td># <%= blog.blogid %></td>
+                <td># <%= blog.id %></td>
                 <td>
                   <img
                     src="/static/images/<%= blog.resim %>"
@@ -43,14 +43,17 @@
                   />
                 </td>
                 <td><%= blog.baslik %></td>
+                <td> <% blog.categories.forEach(category => { %>
+                 <p> <%= category.name %> </p>
+                <% }) %> </td>
                 <td>
                   <a
-                    href="/admin/blogs/<%= blog.blogid %>"
+                    href="/admin/blogs/<%= blog.id %>"
                     class="btn btn-sm btn-primary"
                     >edit</a
                   >
                   <a
-                    href="/admin/blogs/delete/<%= blog.blogid %>"
+                    href="/admin/blogs/delete/<%= blog.id %>"
                     class="btn btn-sm btn-danger"
                     >delete</a
                   >

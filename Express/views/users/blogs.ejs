@@ -14,9 +14,8 @@
 
           <% if (blogs.length == 0) { %> <%- include('../partials/no-product')
           %> <% } %> <% blogs.forEach(blog => { %> <% if (blog.onay) { %>
-          <%-include('../partials/blog-card', blog) %> <% } %> <% }) %> <% if
-          (blogs.filter(blog => blog.onay).length > 3) { %> <%-
-          include('../partials/pagination') %> <% } %>
+          <%-include('../partials/blog-card', blog) %> <% } %> <% }) %> <%-
+          include('../partials/pagination') %>
         </div>
       </div>
     </div>
