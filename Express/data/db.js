@@ -8,6 +8,7 @@ const sequelize = new Sequelize(
     dialect: "mysql",
     host: config.db.host,
     define: { timestamps: false },
+    storage: "./session.mysql",
   }
 );
 

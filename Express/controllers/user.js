@@ -72,7 +72,6 @@ exports.blog_list = async (req, res, next) => {
 };
 
 exports.index = async (req, res, next) => {
-  /*   res.sendFile(path.join(__dirname, "../views/users", "index.html")); */
   try {
     const blogs = await Blog.findAll({
       where: {
@@ -81,7 +80,7 @@ exports.index = async (req, res, next) => {
       raw: true,
     });
     const category = await Category.findAll({ raw: true });
-    res.render("./users/index", {
+    return res.render("./users/index", {
       title: "Tüm Kurslar",
       blogs,
       categories: category,

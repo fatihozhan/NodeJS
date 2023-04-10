@@ -14,6 +14,8 @@
                         <%= category.name %> <br> İsimli Kategori kaydını silmek istiyor musunuz?
                     </b>
                     <form method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+
                         <input type="hidden" name="categoryid" value="<%= category.id %>">
                         <button class="btn btn-danger" type="submit">Evet</button>
                         <a href="/admin/categories" class="btn btn-primary
