@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const path = require("path");
 const products = [
     { id: 1, name: "iphone 12", price: 20000 },
     { id: 2, name: "iphone 13", price: 30000 },
@@ -8,7 +8,8 @@ const products = [
 ];
 
 router.get("/", (req, res) => {
-    res.send(products);
+    res.sendFile(path.join(__dirname, "../logs/readme.txt"));
 });
 
 module.exports = router;
+
