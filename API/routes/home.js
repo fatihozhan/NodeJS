@@ -8,7 +8,7 @@ const products = [
 ];
 
 router.get("/", (req, res) => {
-    res.send(products[0]);
+    res.send(products);
 });
 
 module.exports = router;

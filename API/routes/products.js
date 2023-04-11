@@ -12,7 +12,7 @@ router.get("/", async (req, res, next) => {
     res.send(products);
 });
 
-router.post("/", [auth, isAdmin], async (req, res) => {
+router.post("/"/* , [auth, isAdmin] */, async (req, res) => {
 
     const { error } =  validateProduct(req.body);
 
@@ -34,7 +34,7 @@ router.post("/", [auth, isAdmin], async (req, res) => {
     res.send(newProduct);
 });
 
-router.put("/comment/:id", auth, async (req, res) => {
+router.put("/comment/:id", /* auth, */ async (req, res) => {
     const product = await Product.findById(req.params.id);
     if(!product) {
         return res.status(404).send("aradığınız ürün bulunamadı.");
@@ -51,7 +51,7 @@ router.put("/comment/:id", auth, async (req, res) => {
     res.send(updatedProduct);
 });
 
-router.delete("/comment/:id", auth, async (req, res) => {
+router.delete("/comment/:id", /* auth, */ async (req, res) => {
     const product = await Product.findById(req.params.id);
     if(!product) {
         return res.status(404).send("aradığınız ürün bulunamadı.");
@@ -63,7 +63,7 @@ router.delete("/comment/:id", auth, async (req, res) => {
     res.send(updatedProduct);
 });
 
-router.put("/:id", auth, async (req, res) => {
+router.put("/:id", /* auth, */ async (req, res) => {
     const product = await Product.findById(req.params.id);
     if(!product) {
         return res.status(404).send("aradığınız ürün bulunamadı.");
@@ -87,7 +87,7 @@ router.put("/:id", auth, async (req, res) => {
     res.send(updatedProduct);
 });
 
-router.delete("/:id", auth,  async (req, res) => {
+router.delete("/:id", /* auth, */  async (req, res) => {
     const product = await Product.findByIdAndDelete(req.params.id);
 
     if(!product) {
@@ -97,7 +97,7 @@ router.delete("/:id", auth,  async (req, res) => {
     res.send(product);
 });
 
-router.get("/:id", auth, async (req, res) => {
+router.get("/:id", /* auth, */ async (req, res) => {
     const product = await Product.findById(req.params.id).populate("category","name -_id"); 
 
     if(!product) {
